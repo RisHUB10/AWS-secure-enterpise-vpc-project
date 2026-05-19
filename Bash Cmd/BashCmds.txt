@@ -1,9 +1,158 @@
-ssh -i key.pem ec2-user@BASTION-PUBLIC-IP
+# ================================
+# BASTION HOST SSH ACCESS
+# ================================
 
-ssh -i key.pem ec2-user@PRIVATE-IP
+ssh -i your-key.pem ec2-user@BASTION_PUBLIC_IP
+
+
+# ================================
+# SSH FROM BASTION TO PRIVATE EC2
+# ================================
+
+ssh ec2-user@PRIVATE_EC2_PRIVATE_IP
+
+
+# Example
+ssh ec2-user@10.0.2.45
+
+
+# ================================
+# VPC PEERING CONNECTIVITY TEST
+# ================================
 
 ping 192.168.1.235
 
-sudo yum install httpd -y
+
+# Stop ping
+CTRL + C
+
+
+# ================================
+# SSH TO BRANCH SERVER
+# ================================
+
+ssh ec2-user@192.168.1.235
+
+
+# Verbose SSH debugging
+ssh -v ec2-user@192.168.1.235
+
+
+# ================================
+# CHECK PRIVATE IP
+# ================================
+
+hostname -I
+
+
+# ================================
+# CHECK NETWORK ROUTES
+# ================================
+
+ip route
+
+
+# ================================
+# CHECK NETWORK INTERFACE
+# ================================
+
+ip addr
+
+
+# ================================
+# TEST PORT 22 CONNECTIVITY
+# ================================
+
+nc -zv 192.168.1.235 22
+
+
+# ================================
+# CLOUDWATCH CPU STRESS TEST
+# ================================
 
 yes > /dev/null &
+
+
+# Stop stress test
+killall yes
+
+
+# ================================
+# APACHE INSTALLATION (OPTIONAL)
+# ================================
+
+sudo yum install httpd -y
+
+sudo systemctl start httpd
+
+sudo systemctl enable httpd
+
+
+# ================================
+# SYSTEM UPDATE
+# ================================
+
+sudo yum update -y
+
+
+# ================================
+# CHECK RUNNING SERVICES
+# ================================
+
+systemctl status httpd
+
+
+# ================================
+# FILE & DIRECTORY COMMANDS
+# ================================
+
+ls
+
+pwd
+
+cd
+
+mkdir screenshots
+
+mkdir commands
+
+
+# ================================
+# GIT COMMANDS USED FOR GITHUB
+# ================================
+
+git init
+
+git add .
+
+git commit -m "Initial commit"
+
+git branch -M main
+
+git remote add origin YOUR_GITHUB_REPO_URL
+
+git push -u origin main
+
+
+# ================================
+# GIT CONFIGURATION
+# ================================
+
+git config --global user.name "Rishab Anand"
+
+git config --global user.email "your-email@example.com"
+
+
+# ================================
+# OPTIONAL TROUBLESHOOTING COMMANDS
+# ================================
+
+sudo systemctl restart sshd
+
+sudo reboot
+
+top
+
+free -m
+
+df -h
