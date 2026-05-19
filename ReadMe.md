@@ -24,8 +24,9 @@ Designed and deployed a secure enterprise-grade AWS cloud networking architectur
 ---
 
 # Architecture Diagram
+## Architecture Diagram
 
-(Add your architecture screenshot here)
+![Architecture Diagram](architecture.png)
 
 ---
 
